@@ -1,0 +1,232 @@
+@use '../../default/base';
+
+.carousel {
+    display: flex;
+    width: 100%;
+    position: relative;
+    min-height: max-content;
+    height: auto;
+    &__buttons {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        z-index: 15;
+
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        padding: 15px;
+        &__button {
+            width: 55px;
+            height: 55px;
+            padding: 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            border-radius: 50%;
+            transition: .15s;
+            cursor: pointer;
+            @include base.style-main_transparent_click;
+            & > img {
+                width: 100%;
+                filter: invert(1);
+            }
+            &:nth-child(1) img {
+                transform: rotate(180deg) translateX(1.5px);
+            }
+            &:nth-child(2) img {
+                transform: translateX(1.5px);
+            }
+            @media (hover: hover) {
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+            &_disactive {
+                cursor: default;
+                opacity: 0.5;
+                @media (hover: hover) {
+                    &:hover {
+                        @include base.style-main_transparent;
+                    }
+                    &:active {
+                        transform: scale(1);
+                    }
+                }
+                
+            }
+        }
+    }
+    &__grid {
+        width: 100%;
+        min-height: max-content;
+        height: auto;
+        display: flex;
+        position: relative;
+    }
+    &__gridBG {
+        @include base.pos_absolute(0px, 0px, 0px, 0px);
+        min-width: 0;
+        z-index: 1;
+        &__bg {
+            @include base.absolute-zero;
+            transition: 1s;
+            opacity: 0;
+            min-width: 0;
+            will-change: opacity;
+            transform: scale(1.1);
+            // filter: blur(50px);
+            & > img {
+                min-width: 0;
+                width: 100%;
+                height: 100%;
+            }
+            &_active {
+                opacity: 0.4;
+            }
+        }
+    }
+    &__banner {
+        width: 100%;
+        // height: 515px;
+        min-height: max-content;
+        height: auto;
+        margin-left: -100%;
+        box-sizing: border-box;
+        transition: 0.5s;
+        animation-timing-function: base.$tf-main;
+        position: relative;
+        z-index: 2;
+        // overflow: hidden;
+        will-change: transform, opacity, z-index, margin-left;
+        &__imgBlock {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            // height: 100%;
+            border-radius: 25px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            & img {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                display: block;
+                transition: 0.3s;
+            }
+        }
+        &__interaction {
+            position: absolute;
+            left: 25px;
+            bottom: 25px;
+            z-index: 3;
+            max-width: max-content;
+            &__title {
+                font-family: robotoFlex;
+                font-size: 28px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                margin-bottom: 10px;
+                position: relative;
+                z-index: 1;
+            }
+            &__shopInfo {
+                display: flex;
+                justify-content: space-between;
+                background-color: rgba(255, 255, 255, 0.1);
+                -webkit-backdrop-filter: blur(3px);
+                backdrop-filter: blur(3px);
+                // border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+                border-radius: 20px;
+                padding: 15px;
+                // width: 350px;
+                gap: 20px;
+                max-width: max-content;
+                position: relative;
+                z-index: 3;
+                will-change: backdrop-filter;
+                @include base.style-main_transparent;
+                &__buttons {
+                    display: flex;
+                    gap: 10px;
+                    &__button {
+                        width: 55px;
+                        height: 55px;
+                        padding: 12px;
+                        border-radius: 50%;
+                        transition: .15s;
+                        cursor: pointer;
+                        @include base.style-main_transparent_click;
+                        & > img {
+                            width: 100%;
+                            filter: invert(1);
+                        }
+                        &_active {
+                            @include base.style-main_active;
+                        }
+                    }
+                }
+                &__priceTag {
+                    display: flex;
+                    gap: 10px;
+                    text-shadow: 0 0 3px rgba(0, 0, 0, 0.85);
+                    &__prices {
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 0px;
+                        &__newPrice {
+                            font-size: 26px;
+                            font-weight: 700;
+                            margin-top: -2px;
+                        }
+                        &__oldPrice {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: rgb(200, 200, 200);
+                            text-decoration: line-through;
+                        }
+                    }
+                    &__discount {
+                        // background-color: rgba(255, 255, 255, 0.1);
+                        // border: 1px solid rgba(255, 255, 255, 0.5);
+                        border-radius: 10px;
+                        height: 100%;
+                        font-size: 22px;
+                        font-weight: 500;
+                        padding: {
+                            left: 15px;
+                            right: 15px;
+                        }
+                        @include base.style-main_transparent;
+                    }
+                }
+                &_dark {
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+                &_dark &__buttons__button {
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    background-color: rgba(255, 255, 255, 0.15);
+                }
+                &_dark &__priceTag__discount {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+        &__link {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 2;
+        }
+    }
+}

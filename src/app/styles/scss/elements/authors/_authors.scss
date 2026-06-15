@@ -1,0 +1,73 @@
+@use '../../default/base';
+
+.authors {
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        &__right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    &__grid {
+        @include base.grid(20px, 5);
+        &__author {
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+            border-radius: 20px;
+            overflow: hidden;
+            @include base.style-main_click;
+            &__logo {
+                min-height: 0; // ! если без него то ломается нижняя часть почему?
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 25px 0px;
+                box-shadow: inset 0 0 0 0px base.$clr-blue_light;
+                border-radius: 19px 19px 0 0;
+                transition: .2s;
+                flex-grow: 1;
+                & > img {
+                    height: 100%;
+                    transition: .2s;
+                }
+            }
+            &__info {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 5px;
+                padding: 10px 15px;
+                background-color: rgba(255, 255, 255, .1);
+                transition: .2s;
+                cursor: pointer;
+                &__title {
+                    min-width: 0;
+                    font-weight: 700;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                &__count {
+                    min-width: max-content;
+                }
+            }
+            // &:hover &{
+            //     &__logo {
+            //         box-shadow: inset 0 0 0 2px base.$clr-blue_light;
+            //         & > img {
+            //             transform: scale(1.1);
+            //         }
+            //     }
+            //     &__info {
+            //         background-color: base.$clr-blue_light;
+            //     }
+            // }
+        }
+    }
+}

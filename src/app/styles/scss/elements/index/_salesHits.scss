@@ -1,0 +1,41 @@
+@use '../../default/base';
+
+.salesHits {
+    position: relative;
+    z-index: 2;
+    // padding: 40px 0 35px 0;
+    margin: 40px 0 35px 0;
+    width: 100%;
+    &__games {
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+        @include base.grid(35px, 5);
+        width: 100%;
+    }
+
+    // ! ----------------------------
+    // &_loading > h3{
+    //     display: none;
+    // }
+    // &_loading &__blockButtonMore{
+    //     display: none;
+    // }
+    // &_loading &__blockButtonMore{
+    //     display: none;
+    // }
+    // &_loading .loadingBlock{
+    //     width: 200px;
+    //     margin: auto;
+    //     transform: translateY(60px);
+    //     position: relative;
+    //     z-index: 2;
+    //     padding: 30px;
+    //     border-radius: 4px;
+    //     background-color: rgb(55, 55, 55);
+    // }
+    // &_loading &__bg {
+    //     border-top: 2px solid rgb(85, 85, 85);
+    // }
+    // ! ----------------------------
+}

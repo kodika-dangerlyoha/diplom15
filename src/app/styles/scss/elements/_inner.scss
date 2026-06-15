@@ -1,0 +1,53 @@
+.inner {
+    margin: auto;
+    padding-top: 100px;
+    &_oneSec {
+        width: 1400px;
+        display: block;
+    }
+    &_profile {
+        width: 1200px;
+        padding-top: 120px;
+    }
+    &_main {
+        padding-top: 0;
+        width: 1605px;
+    }
+    &_catalog {
+        width: 1405px;
+        padding-top: 100px;
+    }
+
+    &_game {
+        width: 1220px;
+        padding-top: 0;
+    }
+    &_index {
+        width: 1605px;
+    }
+    &_authors {
+        width: 1405px;
+    }
+
+    &_basket {
+        width: 1405px;
+    }
+
+    &_footer {
+        max-width: 1605px;
+        min-width: 0;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    &_w1405p100 {
+        width: 1405px;
+    }
+    &_w1605p100 {
+        width: 1605px;
+    }
+    &_w1220p150 {
+        width: 1220px;
+        padding-top: 150px;
+    }
+}

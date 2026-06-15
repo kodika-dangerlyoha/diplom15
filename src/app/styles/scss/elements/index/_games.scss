@@ -1,0 +1,10 @@
+@use '../../default/base';
+
+.games {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 50px;
+    &__grid {
+        margin-bottom: 50px;
+    }
+}

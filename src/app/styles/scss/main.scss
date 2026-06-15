@@ -1,0 +1,64 @@
+@use "default/def";
+@use "default/animation";
+// ~ 
+@use "fonts/fonts";
+// ~ 
+@use "elements/inner";
+@use "elements/header";
+@use "elements/footer";
+@use "elements/blackoutBlock";
+@use "elements/gameV";
+@use "elements/gameH";
+@use "elements/seriesCard";
+@use "elements/switch";
+@use "elements/heading";
+@use "elements/griding";
+@use "elements/lineGames";
+@use "elements/blockButtonMore";
+@use "elements/inputList";
+@use "elements/topImgParalaxBlock";
+@use "elements/rocket";
+// ~ Index
+@use "elements/index/carousel";
+@use "elements/index/salesHits";
+@use "elements/index/banner";
+@use "elements/index/games";
+@use "elements/index/offers";
+// ~ Game card
+@use "elements/game_card/miniGameCard";
+@use "elements/game_card/mainInfo";
+@use "elements/game_card/additions";
+@use "elements/game_card/editions";
+@use "elements/game_card/information";
+@use "elements/game_card/similar";
+@use "elements/game_card/videoIF";
+// ~ Profile
+@use "elements/profile/profile";
+@use "elements/profile/settings";
+@use "elements/profile/more";
+@use "elements/profile/purchase";
+// ~ Catalog
+@use "elements/catalog/formFilters";
+@use "elements/catalog/catalog";
+// ~ Basket
+@use "elements/basket/basketContainer";
+// ~ Favorite
+@use "elements/favorite/favorite";
+// ~ Authors
+@use "elements/authors/authors";
+// ~ Series
+@use "elements/series/series";
+// ~ Author
+@use "elements/author/author";
+// ~ Adaptation
+@use "adaptation/adaptation";
+@use "adaptation/game";
+
+.test10 {
+    width: 100px;
+    height: 100%;
+    background-color: red;
+    &_active {
+        background-color: blue;
+    }
+}

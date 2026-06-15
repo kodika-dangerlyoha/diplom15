@@ -1,0 +1,52 @@
+@use '../default/base';
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    & > h2 {
+        font-size: 24px;
+        font-weight: 600;
+    }
+    & > button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        padding: 10px 10px 10px 14px;
+        border-radius: 25px;
+        // background-color: rgba(255, 255, 255, .05);
+        transition: .2s;
+        @include base.style-main_click;
+        & > span {
+            display: block;
+            font-family: base.$fnt-all;
+            font-size: 15px;
+            font-weight: 400;
+            transition: .2s;
+        }
+        & > svg {
+            margin-left: 5px;
+            height: 24px;
+            opacity: 0.8;
+            transform: translateY(1px) translateX(0px);
+            transition: 0.15s;
+        }
+        @media (hover: hover) {
+            &:hover > svg{
+                opacity: 0;
+                transform: translateY(1px) translateX(20px);
+            }
+            &:hover > span{
+                transform: translateX(13px);
+            }
+            &:active {
+                transform: scale(.95);
+            }
+        }
+    }
+    &_center {
+        justify-content: center;
+    }
+}

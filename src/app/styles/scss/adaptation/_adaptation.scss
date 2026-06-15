@@ -1,0 +1,1017 @@
+@use '../default/base';
+
+@media (max-width: 1680px) { 
+    .inner_w1605p100 {
+        width: 1405px;
+    }
+    .griding_4InRow{
+        @include base.grid(35px, 3);
+    }
+    // - header 
+    .header {
+        &__searchBlock {
+            // & > input {
+            //     width: 400px;
+            // }
+        }
+        &__catalog {
+            top: 85px;
+            & > .inner {
+                width: 1200px;
+            }
+            // &__head {
+            //     width: 100%;
+            //     display: flex;
+            //     justify-content: space-between;
+            //     align-items: center;
+            //     font-size: 16px;
+            //     margin-bottom: 10px;
+            //     @include base.style-main_transparent;
+            //     height: 45px;
+            //     padding-left: 15px;
+            //     border-radius: 10px;
+            //     &__title {
+            //         font-weight: 600;
+            //     }
+            //     &__more {
+            //         height: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         opacity: .5;
+            //         cursor: pointer;
+            //         padding-right: 15px;
+            //         padding-left: 15px;
+            //         transition: .15s;
+            //         &:hover {
+            //             opacity: 1;
+            //         }
+            //     }
+            // }
+            &__navs {
+                flex-direction: column;
+                align-items: center;
+                &__genres {
+                    width: 100%;
+                    &__list {
+                        @include base.grid(10px, 4);
+                        // &__genre {
+                        //     position: relative;
+                        //     display: flex;
+                        //     align-items: center;
+                        //     gap: 10px;
+                        //     @include base.style-main_transparent_click;
+                        //     border-radius: 10px;
+                        //     padding: 5px;
+                        //     overflow: hidden;
+                        //     &__icon {
+                        //         position: relative;
+                        //         z-index: 2;
+                        //         display: flex;
+                        //         align-items: center;
+                        //         justify-content: center;
+                        //         height: 35px;
+                        //         & > img {
+                        //             height: 100%;
+                        //         }
+                        //     }
+                        //     &__title {
+                        //         position: relative;
+                        //         z-index: 2;
+                        //         cursor: pointer;
+                        //     }
+                        //     // &_active {
+                        //     //     @include base.style-main_active;
+                        //     //     .header__catalog__navs__indicator {
+                        //     //         opacity: 0;
+                        //     //     }
+                        //     // }
+                        //     // &:hover .header__catalog__navs__indicator {
+                        //     //     transition: 1s;
+                        //     //     width: 100%;
+                        //     // }
+                        //     // &_active:hover{
+                        //     //     @include base.style-main_active;
+                        //     //     .header__catalog__navs__indicator {
+                        //     //         width: 100%;
+                        //     //         opacity: 0;
+                        //     //     }
+                        //     // }
+                        // }
+                    }
+                }
+                &__authors {
+                    width: 100%;
+                    &__list {
+                        @include base.grid(10px, 5);
+                        // &__author {
+                        //     position: relative;
+                        //     height: 104px;
+                        //     display: flex;
+                        //     flex-direction: column;
+                        //     align-items: center;
+                        //     justify-content: center;
+                        //     gap: 5px;
+                        //     @include base.style-main_transparent_click;
+                        //     border-radius: 10px;
+                        //     overflow: hidden;
+                        //     &__img {
+                        //         position: relative;
+                        //         z-index: 2;
+                        //         display: flex;
+                        //         align-items: center;
+                        //         justify-content: center;
+                        //         width: 80%;
+                        //         height: 50px;
+                        //         & > img {
+                        //             max-height: 100%;
+                        //             max-width: 100%;
+                        //         }
+                        //     }
+                        //     &__title {
+                        //         position: relative;
+                        //         z-index: 2;
+                        //         cursor: pointer;
+                        //     }   
+                        //     // &_active {
+                        //     //     @include base.style-main_active;
+                        //     //     .header__catalog__navs__indicator {
+                        //     //         opacity: 0;
+                        //     //     }
+                        //     // }
+                        //     // &:hover .header__catalog__navs__indicator {
+                        //     //     transition: 1s;
+                        //     //     width: 100%;
+                        //     // }
+                        //     // &_active:hover{
+                        //     //     @include base.style-main_active;
+                        //     //     .header__catalog__navs__indicator {
+                        //     //         width: 100%;
+                        //     //         opacity: 0;
+                        //     //     }
+                        //     // }
+                        // }
+                    }
+                }
+                // &__nav {
+                //     &_active {
+                //         @include base.style-main_active;
+                //         .header__catalog__navs__indicator {
+                //             opacity: 0;
+                //         }
+                //     }
+                //     &:hover .header__catalog__navs__indicator {
+                //         transition: .6s;
+                //         width: 100%;
+                //     }
+                //     &_active:hover{
+                //         @include base.style-main_active;
+                //         .header__catalog__navs__indicator {
+                //             width: 100%;
+                //             opacity: 0;
+                //         }
+                //     }
+                // }
+                // &__indicator {
+                //     position: absolute;
+                //     top: 0;
+                //     bottom: 0;
+                //     left: 0;
+                //     width: 0%;
+                //     z-index: 1;
+                //     // background-color: rgba(255, 255, 255, .07);
+                //     background-color: base.$clr-blue_light_transparent;
+                //     // opacity: .3;
+                //     transition-timing-function: base.$tf-main;
+                // }
+                // &__clickBlock {
+                //     position: absolute;
+                //     top: 0;
+                //     bottom: 0;
+                //     right: 0;
+                //     left: 0;
+                //     z-index: 4;
+                // }
+            }
+            &__gamelist {
+                display: none;
+                // grid-gap: 15px;
+                // grid-template-columns: repeat(5, minmax(0px, 1fr));
+                // opacity: 1;
+            }
+            &_open {
+                display: block;
+            }
+        }
+    }
+}
+
+@media (max-width: 1473px) {
+    .header {
+        &__searchBlock {
+            & > input {
+                width: 400px;
+            }
+        }
+    }
+    .inner_w1605p100 {
+        width: 1105px;
+    }
+}
+
+@media (max-width: 1155px) {
+    .inner_w1605p100 {
+        width: 900px;
+    }
+
+    .salesHits {
+        &__games {
+            @include base.grid(20px, 5);
+        }
+    }
+
+    .griding_4InRow{
+        @include base.grid(20px, 3);
+    }
+
+    .carousel {
+        &__buttons {
+            bottom: 20px;
+            right: 20px;
+            gap: 8px;
+            padding: 0px;
+            &__button {
+                width: 40px;
+                height: 40px;
+                padding: 11px;
+            }
+        }
+        &__banner {
+            &__interaction {
+                left: 20px;
+                bottom: 20px;
+                &__title {
+                    font-size: 20px;
+                }
+                &__shopInfo {
+                    border-radius: 20px;
+                    padding: 10px;
+                    width: auto;
+                    gap: 40px;
+                    &__buttons {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        &__button {
+                            width: 35px;
+                            height: 35px;
+                            padding: 8px;
+                        }
+                    }
+                    &__priceTag {
+                        display: flex;
+                        gap: 10px;
+                        &__prices {
+                            display: flex;
+                            align-items: end;
+                            justify-content: center;
+                            flex-direction: column;
+                            gap: 0px;
+                            &__newPrice {
+                                font-size: 16px;
+                            }
+                            &__oldPrice {
+                                font-size: 13px;
+                            }
+                        }
+                        &__discount {
+                            border-radius: 10px;
+                            height: 100%;
+                            font-size: 18px;
+                            font-weight: 500;
+                            padding: {
+                                left: 10px;
+                                right: 10px;
+                            }
+                        }
+                    }
+                    &_dark {
+                        border: 1px solid rgba(255, 255, 255, 0.5);
+                        background-color: rgba(0, 0, 0, 0.2);
+                    }
+                    &_dark &__buttons__button {
+                        border: 1px solid rgba(255, 255, 255, 0.5);
+                        background-color: rgba(255, 255, 255, 0.15);
+                    }
+                    &_dark &__priceTag__discount {
+                        background-color: rgba(255, 255, 255, 0.2);
+                    }
+                }
+            }
+        }
+    }
+
+    .gameBanner {
+        &__interaction {
+            left: 20px;
+            bottom: 20px;
+            &__title {
+                font-size: 20px;
+            }
+            &__shopInfo {
+                border-radius: 20px;
+                padding: 10px;
+                width: auto;
+                gap: 40px;
+                &__buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    &__button {
+                        width: 35px;
+                        height: 35px;
+                        padding: 8px;
+                    }
+                }
+                &__priceTag {
+                    display: flex;
+                    gap: 10px;
+                    &__prices {
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 0px;
+                        &__newPrice {
+                            font-size: 16px;
+                        }
+                        &__oldPrice {
+                            font-size: 13px;
+                        }
+                    }
+                    &__discount {
+                        border-radius: 10px;
+                        height: 100%;
+                        font-size: 18px;
+                        font-weight: 500;
+                        padding: {
+                            left: 10px;
+                            right: 10px;
+                        }
+                    }
+                }
+                &_dark {
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    background-color: rgba(0, 0, 0, 0.2);
+                }
+                &_dark &__buttons__button {
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    background-color: rgba(255, 255, 255, 0.15);
+                }
+                &_dark &__priceTag__discount {
+                    background-color: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+
+    .gameH {
+        &__banner {
+            &__videoBlock {
+                display: none;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                opacity: 0;
+                background-color: rgba(0, 0, 0, .2);
+                transition: 0.15s;
+                & video {
+                    height: 100%;
+                    display: none;
+                }
+            }
+            &__discount {
+                position: absolute;
+                z-index: 4;
+                bottom: 8px;
+                right: 8px;
+                padding: 5px 8px 5px 8px;
+                border-radius: 7px;
+                cursor: pointer;
+                transition: .15s;
+                opacity: 1;
+                font-family: base.$fnt-all;
+                font-size: 15px;
+                font-weight: 700;
+                @include base.style-percentBlock;
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+            }
+            &__info {
+                top: 8px;
+                bottom: 8px;
+                right: 8px;
+                left: 8px;
+                &__top {
+                    gap: 5px;
+                }
+                &__bottom {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                &__right {
+                    gap: 5px;
+                }
+                &__point {
+                    padding: 3px 6px;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    &_mark {
+                        padding: 5px;
+                        & > img {
+                            height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &_headerCatalog &{
+            &__banner {
+                // height: 173px;
+                &__info {
+                    &__point {
+                        font-size: 14px;
+                        padding: 4px 7px;
+                        &_mark {
+                            padding: 4px;
+                        }
+                    }
+                }
+            }
+            &__info {
+                &__right {
+                    gap: 7px;
+                }
+                &__name {
+                    font-size: 15px;
+                }
+                &__price {
+                    font-size: 15px;
+                }
+                &__buttons {
+                    background: transparent;
+                    &__button {
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 6px;
+                        & img {
+                            height: 17px;
+                        }
+                    }
+                }
+            }
+        }
+        &_headerCatalog {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: transform .4s, opacity .4s;
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .inner_w1605p100 {
+        width: 95%;
+        padding-top: 80px;
+        // font-size: clamp(14px, 4vw, 20px);
+    }
+    .carousel {
+        &__banner {
+            &__interaction {
+                &__title {
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                }
+                &__shopInfo {
+                    border-radius: 20px;
+                    padding: 8px;
+                    gap: 35px;
+                    &__buttons {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        &__button {
+                            width: 35px;
+                            height: 35px;
+                            padding: 8px;
+                        }
+                    }
+                    &__priceTag {
+                        display: flex;
+                        gap: 10px;
+                        &__prices {
+                            display: flex;
+                            align-items: end;
+                            justify-content: center;
+                            flex-direction: column;
+                            gap: 0px;
+                            &__newPrice {
+                                // font-size: 16px;
+                                font-size: 16px;
+                            }
+                            &__oldPrice {
+                                font-size: 12px;
+                            }
+                        }
+                        &__discount {
+                            border-radius: 10px;
+                            height: 100%;
+                            font-size: 16px;
+                            font-weight: 500;
+                            padding: {
+                                left: 10px;
+                                right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .gameBanner {
+        &__interaction {
+            &__title {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            &__shopInfo {
+                border-radius: 20px;
+                padding: 8px;
+                gap: 35px;
+                &__buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    &__button {
+                        width: 35px;
+                        height: 35px;
+                        padding: 8px;
+                    }
+                }
+                &__priceTag {
+                    display: flex;
+                    gap: 10px;
+                    &__prices {
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 0px;
+                        &__newPrice {
+                            // font-size: 16px;
+                            font-size: 16px;
+                        }
+                        &__oldPrice {
+                            font-size: 12px;
+                        }
+                    }
+                    &__discount {
+                        border-radius: 10px;
+                        height: 100%;
+                        font-size: 16px;
+                        font-weight: 500;
+                        padding: {
+                            left: 10px;
+                            right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 826px) {
+    .griding_4InRow{
+        @include base.grid(20px, 2);
+    }
+    .salesHits {
+        &__games {
+            @include base.grid(15px, 4);
+        }
+    }
+    .heading {
+        margin-bottom: 16px;
+        & > h2 {
+            font-size: 20px;
+        }
+        & > button {
+            padding: 8px 8px 8px 12px;
+            border-radius: 25px;
+            & > span {
+                font-size: 13px;
+            }
+            & > svg {
+                margin-left: 5px;
+                height: 20px;
+                transform: translateY(1px) translateX(0px);
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .carousel {
+        &__buttons {
+            bottom: 10px;
+            right: 10px;
+            gap: 8px;
+            padding: 0px;
+            &__button {
+                width: 40px;
+                height: 40px;
+                padding: 11px;
+            }
+        }
+        &__banner {
+            &__interaction {
+                left: 10px;
+                bottom: 10px;
+                &__title {
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                }
+                &__shopInfo {
+                    border-radius: 20px;
+                    padding: 8px;
+                    gap: 35px;
+                    &__buttons {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        &__button {
+                            width: 35px;
+                            height: 35px;
+                            padding: 8px;
+                        }
+                    }
+                    &__priceTag {
+                        display: flex;
+                        gap: 10px;
+                        &__prices {
+                            display: flex;
+                            align-items: end;
+                            justify-content: center;
+                            flex-direction: column;
+                            gap: 0px;
+                            &__newPrice {
+                                // font-size: 16px;
+                                font-size: 16px;
+                            }
+                            &__oldPrice {
+                                font-size: 12px;
+                            }
+                        }
+                        &__discount {
+                            border-radius: 10px;
+                            height: 100%;
+                            font-size: 16px;
+                            font-weight: 500;
+                            padding: {
+                                left: 10px;
+                                right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .gameBanner {
+        &__interaction {
+            left: 10px;
+            bottom: 10px;
+            &__title {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            &__shopInfo {
+                border-radius: 20px;
+                padding: 8px;
+                gap: 35px;
+                &__buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    &__button {
+                        width: 35px;
+                        height: 35px;
+                        padding: 8px;
+                    }
+                }
+                &__priceTag {
+                    display: flex;
+                    gap: 10px;
+                    &__prices {
+                        display: flex;
+                        align-items: end;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 0px;
+                        &__newPrice {
+                            // font-size: 16px;
+                            font-size: 16px;
+                        }
+                        &__oldPrice {
+                            font-size: 12px;
+                        }
+                    }
+                    &__discount {
+                        border-radius: 10px;
+                        height: 100%;
+                        font-size: 16px;
+                        font-weight: 500;
+                        padding: {
+                            left: 10px;
+                            right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .heading {
+        margin-bottom: 14px;
+        & > h2 {
+            font-size: 18px;
+        }
+        & > button {
+            padding: 6px 6px 6px 10px;
+            border-radius: 25px;
+            & > span {
+                font-size: 11px;
+            }
+            & > svg {
+                margin-left: 5px;
+                height: 16px;
+                transform: translateY(1px) translateX(0px);
+            }
+            // &:hover > svg{
+            //     transform: translateY(1px) translateX(20px);
+            // }
+            // &:hover > span{
+            //     transform: translateX(13px);
+            // }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .inner_w1605p100 {
+        width: 90%;
+    }
+    .griding_4InRow{
+        @include base.grid(20px, 1);
+    }
+    .salesHits {
+        &__games {
+            @include base.grid(20px, 2);
+        }
+    }
+    .carousel {
+        &__buttons {
+            bottom: auto;
+            top: 10px;
+            right: 10px;
+            gap: 8px;
+            flex-direction: column-reverse;
+            padding: 0px;
+        }
+        &__banner {
+            &__interaction {
+                left: 10px;
+                bottom: 10px;
+                max-width: calc(100% - 20px);
+                &__title {
+                    // max-width: 221px;
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    .gameBanner {
+        &__interaction {
+            left: 10px;
+            bottom: 10px;
+            max-width: calc(100% - 20px);
+            &__title {
+                // max-width: 221px;
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+// - - - - - footer 
+
+@media (max-width: 922px) {
+    .footer {
+        &__head {
+            // justify-content: start;
+            align-items: start;
+            flex-direction: column;
+            gap: 20px;
+            &__left {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+            }
+        }
+        &__body {
+            &__info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                gap: 20px;
+                &__copyright {
+                    & > br {
+                        display: none;
+                    }
+                }
+                &__banks {
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    height: auto;
+                    & > img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 734px) {
+    .footer {
+        &__head {
+            align-items: center;
+            &__left {
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            &__nav {
+                gap: 12px;
+                & > a {
+                    font-size: 12px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 626px) {
+    .footer {
+        &__head {
+            &__nav {
+            }
+        }
+        &__body {
+            &__links {
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 20px;
+                &__title {
+                    margin-bottom: 8px;
+                    & > h4 {
+                        text-align: center;
+                    }
+                }
+                &__container {
+                    display: flex;
+                    gap: 12px;
+                    align-items: center;
+                }
+                &__social {
+                    & a {
+                        & > img {
+                            height: 25px;
+                        }
+                    }
+                }
+                &__social &__title > h4 {
+                    text-align: center;
+                }
+                &__social &__container {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 493px) {
+    .footer {
+        &__head {
+            align-items: center;
+            &__left {
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            &__nav {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media (max-width: 434px) {
+    .footer {
+        &__body {
+            &__links {
+                &__container {
+                    gap: 12px;
+                }
+                &__contacts {
+                    & a {
+                        width: 225px;
+                        height: 75px;
+                        border-radius: 15px;
+
+                        @include base.style-main_click;
+                        background-color: rgba(255, 255, 255, .05);
+                        cursor: pointer;
+                        transition: .2s;
+                        & > img {
+                            height: 23px;
+                        }
+                        & > span {
+                            display: block;
+                            text-align: center;
+                            font-size: 12px;
+                        }
+                    }
+                }
+                &__contacts &__container {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+// - - 
+
+// - - - - - - header 
+
+@media (max-width: 1086px) {
+    .header {
+        position: fixed;
+        z-index: 50;
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        &__mobile {
+            display: block;
+            .header__logo {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        &__left {
+            display: none;
+        }
+        &__center {
+            display: none;
+        }
+        &__right {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 1680px) { 
+    
+}

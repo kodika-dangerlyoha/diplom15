@@ -1,0 +1,25 @@
+@use '../../default/base';
+
+.similar {
+    position: relative;
+    z-index: 3;
+    margin: auto;
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .2);
+    &__grid {
+        display: none;
+        grid-gap: 35px;
+        grid-template-columns: repeat(3, minmax(0px, 1fr));
+        align-items: center;
+        justify-content: space-between;
+        animation: open_offers_games .3s base.$tf-main 1;
+        &_active {
+            display: grid;
+        }
+    }
+    &_loading {
+        display: none;
+    }
+}

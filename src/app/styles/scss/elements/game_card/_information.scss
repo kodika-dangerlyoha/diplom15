@@ -1,0 +1,180 @@
+@use '../../default/base';
+
+.information {
+    position: relative;
+    z-index: 3;
+    margin: auto;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    &__description {
+        width: 100%;
+        font-family: base.$fnt-all;
+        color: white;
+        cursor: default;
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0;
+        color: rgb(220, 220, 220);
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        animation: open_offers_games 0.5s ease 1;
+        & > h2 {
+            font-size: 22px;
+            margin: 0;
+            padding-left: 20px;
+        }
+        & > div {
+            line-height: 26px;
+            // @include base.information_game_style;
+            @include base.style-main_base;
+            // background-color: rgba(255, 255, 255, .05);
+            padding: 10px 20px 20px 20px;
+            border-radius: 20px;
+            & h2 {
+                font-family: base.$fnt-all;
+                color: white;
+                cursor: default;
+                font-size: 20px;
+                font-weight: 500;
+                padding: 0;
+                margin: 8px 0 2px;
+                & > strong {
+                    all: inherit;
+                }
+            }
+            & p {
+                font-family: base.$fnt-all;
+                color: white;
+                cursor: default;
+                font-size: 18px;
+                font-weight: 300;
+                margin: 0;
+                color: rgb(230, 230, 230);
+                line-height: 26px;
+            }
+            & img {
+                width: 100%;
+                display: block;
+                border-radius: 10px;
+                margin: 10px 0 10px 0;
+                // float: right;
+            }
+        }
+        
+        // &_active {
+        //     display: block;
+        // }
+    }
+    &__description.information_block_active {
+        display: block;
+    }
+    &__rightColumn {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &__systemRequirements {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            animation: open_offers_games 0.5s ease 1;
+            & > h2 {
+                font-size: 22px;
+                margin: 0;
+                // border: 2px solid rgb(50, 50, 50);
+                // padding: 10px;
+                padding-left: 20px;
+                // border-radius: 20px;
+                // box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
+                // background: rgb(45, 45, 45);
+            }
+            & > div {
+                // @include base.information_game_style;
+                @include base.style-main_base;
+                // background-color: rgba(255, 255, 255, .05);
+                padding: 10px 20px 20px 20px;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                & > ul {
+                    list-style-type: none;
+                    font-family: robotoFlex;
+                    color: rgb(255, 255, 255);
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    padding-left: 0;
+                    &:first-child {
+                        padding-bottom: 14px;
+                        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+                    }
+                    & > strong {
+                        font-size: 20px;
+                    }
+                    & > ul {
+                        margin-top: 5px;
+                        line-height: 25px;
+                        list-style-type: none;
+                        padding-left: 0;
+                        & > li {
+                            display: flex;
+                            border-radius: 5px;
+                            padding: {
+                                left: 10px;
+                                top: 2px;
+                                bottom: 2px;
+                            }
+                            &:nth-child(2n) {
+                                background-color: rgba(255, 255, 255, 0.04);
+                            }
+                            & > strong {
+                                width: 100%;
+                                max-width: 180px;
+                                font-weight: 400;
+                                color: rgb(200, 200, 200);
+                                margin-right: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+            &_active {
+                display: flex;
+            }
+        }
+        &__systemRequirements.information_block_active {
+            display: flex;
+        }
+        &__activation {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            animation: open_offers_games 0.5s ease 1;
+            & > h2 {
+                font-size: 22px;
+                margin: 0;
+                // border: 2px solid rgb(50, 50, 50);
+                // padding: 10px;
+                padding-left: 20px;
+                // border-radius: 20px;
+                // box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
+                // background: rgb(45, 45, 45);
+            }
+            &__block {
+                // @include base.information_game_style;
+                @include base.style-main_base;
+                // background-color: rgba(255, 255, 255, .05);
+                border-radius: 20px;
+                padding: 20px;
+            }
+        }
+    }
+    
+    &_loading {
+        display: none;
+    }
+}

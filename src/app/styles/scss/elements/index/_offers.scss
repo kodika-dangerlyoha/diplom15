@@ -1,0 +1,106 @@
+@use '../../default/base';
+
+.offers {
+    padding: 20px 150px 15px 150px;
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-bottom: 30px;
+        gap: 10px;
+        &__nav {
+            position: relative;
+            padding: 12px 16px 12px 16px;
+            cursor: pointer;
+            border-radius: 23px;
+            background-color: rgba(255, 255, 255, .05);
+            @include base.style-main_click;
+            transition: .2s;
+            &__text {
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            &_active {
+                @include base.style-main_active;
+                &:hover {
+                    @include base.style-main_active;
+                }
+            }
+            &:active {
+                transform: scale(.95);
+            }
+            // &__strip {
+            //     position: absolute;
+            //     bottom: 0;
+            //     left: 0;
+            //     right: 0;
+            //     height: 3px;
+            //     border-radius: 2px;
+            //     background: transparent;
+            //     transition: 0.15s;
+            //     transform: translateY(3px);
+            //     &_active {
+            //         transform: translateY(0px);
+            //         background: base.$clr-blue_light;
+            //     }
+            // }
+            // &:hover &__strip{
+            //     transform: translateY(0px);
+            //     background: rgb(255, 255, 255);
+            // }
+            // &:hover &__strip_active{
+            //     background: base.$clr-blue_light;
+            // }
+        }
+    }
+    &__grid {
+        // display: grid;
+        grid-gap: 35px;
+        grid-template-columns: repeat(4, minmax(0px, 1fr));
+        align-items: center;
+        justify-content: space-between;
+        display: none;
+        &_active {
+            display: grid;
+            animation: open_offers_games 0.5s ease 1;
+        }
+    }
+    &__blockButtonMore {
+        display: flex;
+        justify-content: end;
+        margin-top: 30px;
+        &__button {
+            display: flex;
+            align-items: center;
+            font-family: base.$fnt-all;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+
+            padding: 12px 16px 12px 16px;
+            border-radius: 21px;
+            background-color: rgba(255, 255, 255, .05);
+            // @include base.style-glass_hover;
+            transition: .2s;
+            & img {
+                margin-left: 5px;
+                height: 16px;
+                filter: invert(1);
+                opacity: 0.5;
+                transform: translateY(1px) translateX(0px);
+                transition: 0.15s;
+            }
+            &:hover img{
+                opacity: 1;
+                transform: translateY(1px) translateX(5px);
+            }
+            &:active {
+                transform: scale(.95);
+            }
+        }
+    }
+    &_loading {
+        display: none;
+    }
+}

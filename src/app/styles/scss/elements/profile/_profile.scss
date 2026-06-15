@@ -1,0 +1,229 @@
+@use '../../default/base';
+
+.topic {
+    display: flex;
+    align-items: start;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.profile {
+    border-radius: 25px;
+    // overflow: hidden;
+    flex-grow: 1;
+    @include base.style-main_base;
+    &__top {
+        border-radius: 24px 24px 0 0;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+        background-color: rgba(255, 255, 255, .05);
+    }
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        & > button {
+            border-radius: 10px;
+            font-size: 18px;
+            padding: 7px 15px;
+            @include base.style-main_click;
+        }
+    }
+    &__avatar {
+        width: 85px;
+        height: 85px;
+        overflow: hidden;
+        border-radius: 10px;
+        & > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__info {
+        &__nickname {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 7px;
+            & > span {
+                font-size: 24px;
+                font-weight: 600;
+            }
+            &__steamLink {
+                background-color: rgba(255, 255, 255, .05);
+                width: 32px;
+                height: 32px;
+                padding: 5px;
+                border-radius: 50%;
+                transition: .2s;
+                cursor: pointer;
+                & > svg {
+                    transform: translateY(2px);
+                    & > path {
+                        fill: rgb(180, 180, 180);
+                        transition: .2s;
+                    }
+                }
+                &:hover {
+                    background-color: rgba(255, 255, 255, .1);
+                }
+                &:hover > svg > path {
+                    fill: rgb(255, 255, 255);
+                }
+            }
+        }
+        &__points {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            &__point {
+                border-radius: 13px;
+                padding: 3px 10px;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                @include base.style-main;
+                & > span {
+                    color: rgb(200, 200, 200);
+                    margin-right: 5px;
+                }
+                &__button {
+                    height: 19px;
+                    width: 19px;
+                    padding: 2px;
+                    cursor: pointer;
+                    margin-left: 5px;
+                    margin-right: -5px;
+                    opacity: .6;
+                    transition: .15s;
+                    & > svg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pNotification {
+    width: 350px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    max-height: 247px;
+    @include base.style-main_base;
+    &__header {
+        background-color: rgba(255, 255, 255, .05);
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        &__top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7px 13px;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+        &__title {
+
+        }
+        &__link {
+            color: rgb(200, 200, 200);
+            font-size: 12px;
+            transition: .15s;
+            cursor: pointer;
+            &:hover {
+                color: base.$clr-blue_light;
+            }
+        }
+        &__filter {
+            padding: 5px;
+            display: flex;
+            gap: 5px;
+            &__point {
+                font-size: 12px;
+                padding: 3px 7px;
+                border-radius: 8px;
+                @include base.style-main_click;
+                // box-shadow: none;
+            }
+        }
+    }
+    &__grid {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        overflow: auto;
+        max-height: calc(247px - 70px);
+        @include base.style-webkit_scrollbar;
+        &__notification {
+            border-radius: 10px;
+            padding: 8px;
+            display: flex;
+            gap: 8px;
+            @include base.style-main;
+            &__point {
+                @include base.flex-center;
+                &__circle {
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: base.$clr-blue_light;
+                    &_error {
+                        background-color: base.$clr-red_close;
+                    }
+                    &_nothing {
+                        background-color: rgb(255, 255, 255);
+                    }
+                }
+                &__smile {
+                    font-size: 14px;
+                    transform: rotate(90deg);
+                }
+            }
+            &__text {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 19px;
+                color: rgb(245, 245, 245);
+                & > span {
+                    font-weight: 700;
+                    color: rgb(255, 255, 255);
+                }
+            }
+            &__buttonClose {
+                @include base.pos_absolute(0px, 0px, auto, auto);
+                width: 20px;
+                height: 20px;
+                padding: 6px;
+                border-radius: 50%;
+                background-color: red;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                background-color: rgba(255, 255, 255, 0.1);
+                & > img {
+                    width: 100%;
+                }
+            }
+            &_new {
+                // @include base.style-main_active;
+                // border-color: base.$clr-blue_light;
+                border-color: rgba(1, 162, 255, .8);
+            }
+        }
+        &__nothing {
+            height: 25px;
+            color: rgba(255, 255, 255, .5);
+            text-align: center;
+        }
+    }
+}

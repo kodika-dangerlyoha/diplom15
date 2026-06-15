@@ -1,0 +1,22 @@
+{
+  "name": "game-sale-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "strapi:dev": "npm --prefix backend run develop",
+    "strapi:build": "npm --prefix backend run build",
+    "strapi:seed": "npm --prefix backend run seed",
+    "strapi:catalog:migrate": "npm --prefix backend run catalog:migrate"
+  },
+  "dependencies": {
+    "next": "16.2.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "babel-plugin-react-compiler": "1.0.0"
+  }
+}

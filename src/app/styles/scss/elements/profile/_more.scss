@@ -1,0 +1,40 @@
+@use '../../default/base';
+
+.more {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-bottom: 20px;
+        gap: 10px;
+        &__nav {
+            position: relative;
+            padding: 12px 16px 12px 16px;
+            cursor: pointer;
+            border-radius: 23px;
+            background-color: rgba(255, 255, 255, .05);
+            @include base.style-main_click;
+            transition: .2s;
+            &__text {
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            &_active {
+                @include base.style-main_active;
+                &:hover {
+                    @include base.style-main_active;
+                }
+            }
+            &:active {
+                transform: scale(.95);
+            }
+        }
+    }
+    &__section {
+        display: none;
+        &_active {
+            display: block;
+        }
+    }
+}

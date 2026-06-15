@@ -1,0 +1,430 @@
+/* Game page fixes layered over the compiled source styles. */
+@media (min-width: 1287px) {
+	.game-detail .mainInfo__info {
+		height: 494px;
+		min-height: 494px;
+		align-self: flex-end;
+	}
+}
+
+.game-detail .mainInfo__interaction {
+	box-sizing: border-box;
+	min-height: 82px;
+	gap: 16px;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.game-detail .mainInfo__interaction__left,
+.game-detail .mainInfo__interaction__right {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	min-width: 0;
+	min-height: 0;
+}
+
+.game-detail .mainInfo__interaction__left {
+	gap: 10px;
+}
+
+.game-detail .mainInfo__interaction__right {
+	gap: 10px;
+	margin-left: auto;
+}
+
+.game-detail .mainInfo__interaction__button {
+	box-sizing: border-box;
+	flex: 0 0 60px;
+	width: 60px;
+	height: 60px;
+	min-width: 60px;
+	min-height: 60px;
+}
+
+.game-detail .mainInfo__interaction__button_buy {
+	flex: 0 0 auto;
+	width: auto;
+	min-width: 102px;
+	padding: 0 20px;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.game-detail .mainInfo__interaction__prices {
+	min-width: 104px;
+	line-height: 1;
+}
+
+.game-detail .mainInfo__interaction__prices__old {
+	line-height: 18px;
+	transform: translateY(2px);
+}
+
+.game-detail .mainInfo__interaction__prices__new {
+	line-height: 30px;
+	white-space: nowrap;
+}
+
+.game-detail .mainInfo__interaction__discount {
+	box-sizing: border-box;
+	flex: 0 0 75px;
+	width: 75px;
+	height: 60px;
+	min-width: 75px;
+	min-height: 60px;
+}
+
+.game-detail .mainInfo__banner__visual__imgBlock > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.game-detail .mainInfo__banner__interface__bottom__scroll {
+	overscroll-behavior: contain;
+	touch-action: pan-x;
+}
+
+.game-detail .topImgParalaxBlock {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 550px;
+	opacity: 0.72;
+	overflow: hidden;
+	pointer-events: none;
+	will-change: height, opacity;
+}
+
+.game-detail .topImgParalaxBlock > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center top;
+	display: block;
+}
+
+.game-detail .mainInfo__info__smallDescription {
+	display: -webkit-box !important;
+	max-height: calc(1.45em * 4);
+	overflow: hidden;
+	line-height: 1.45;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4 !important;
+	line-clamp: 4;
+}
+
+.game-detail .information {
+	gap: 16px;
+	margin-top: 24px;
+}
+
+.game-detail .information__description,
+.game-detail .information__rightColumn__systemRequirements {
+	gap: 6px;
+}
+
+.game-detail .information__description > h2,
+.game-detail .information__rightColumn__systemRequirements > h2 {
+	padding-left: 14px;
+}
+
+.game-detail .information__description > div,
+.game-detail .information__rightColumn__systemRequirements > div {
+	padding-top: 12px;
+}
+
+.game-detail #description,
+.game-detail #systemRequirements {
+	color: rgb(230, 230, 230);
+	line-height: 1.5;
+	overflow-wrap: anywhere;
+}
+
+.game-detail #description h1,
+.game-detail #description h2,
+.game-detail #description h3,
+.game-detail #description h4,
+.game-detail #systemRequirements h1,
+.game-detail #systemRequirements h2,
+.game-detail #systemRequirements h3,
+.game-detail #systemRequirements h4 {
+	margin: 10px 0 6px;
+	color: #fff;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.game-detail #description h1:first-child,
+.game-detail #description h2:first-child,
+.game-detail #description h3:first-child,
+.game-detail #description h4:first-child,
+.game-detail #systemRequirements h1:first-child,
+.game-detail #systemRequirements h2:first-child,
+.game-detail #systemRequirements h3:first-child,
+.game-detail #systemRequirements h4:first-child {
+	margin-top: 0;
+}
+
+.game-detail #description h1,
+.game-detail #systemRequirements h1 {
+	font-size: 26px;
+}
+
+.game-detail #description h2,
+.game-detail #systemRequirements h2 {
+	font-size: 22px;
+}
+
+.game-detail #description h3,
+.game-detail #description h4,
+.game-detail #systemRequirements h3,
+.game-detail #systemRequirements h4 {
+	font-size: 18px;
+}
+
+.game-detail #description p,
+.game-detail #systemRequirements p {
+	margin: 0 0 8px;
+	color: rgb(230, 230, 230);
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.game-detail #description ul,
+.game-detail #description ol,
+.game-detail #systemRequirements ul,
+.game-detail #systemRequirements ol {
+	margin: 4px 0 10px;
+	padding-left: 0;
+	list-style: none;
+}
+
+.game-detail #description li,
+.game-detail #systemRequirements li {
+	margin: 3px 0;
+	padding: 5px 10px;
+	border-radius: 6px;
+	color: rgb(230, 230, 230);
+}
+
+.game-detail #description li:nth-child(2n),
+.game-detail #systemRequirements li:nth-child(2n) {
+	background-color: rgba(255, 255, 255, 0.04);
+}
+
+.game-detail #description strong,
+.game-detail #systemRequirements strong {
+	color: #fff;
+	font-weight: 700;
+}
+
+.game-detail #systemRequirements .bb_ul > li {
+	display: flex;
+	gap: 8px;
+}
+
+.game-detail #systemRequirements .bb_ul > li > strong {
+	width: 100%;
+	max-width: 190px;
+	flex: 0 0 190px;
+	color: rgb(200, 200, 200);
+	font-weight: 500;
+}
+
+.game-detail #description a,
+.game-detail #systemRequirements a {
+	color: rgb(1, 162, 255);
+	cursor: pointer;
+	transition: 0.15s;
+}
+
+.game-detail #description a:hover,
+.game-detail #systemRequirements a:hover {
+	color: #fff;
+}
+
+.game-detail #description img,
+.game-detail #systemRequirements img {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	margin: 10px 0;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.game-detail #description table,
+.game-detail #systemRequirements table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 12px 0;
+	overflow: hidden;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.04);
+}
+
+.game-detail #description th,
+.game-detail #description td,
+.game-detail #systemRequirements th,
+.game-detail #systemRequirements td {
+	padding: 8px 10px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	text-align: left;
+	vertical-align: top;
+}
+
+.game-detail .switch__head__point__click {
+	border: none;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
+.game-detail #game_categories {
+	overflow-x: auto;
+	overflow-y: hidden;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+}
+
+.game-detail #game_categories .mainInfo__info__category__point {
+	flex-shrink: 0;
+	white-space: nowrap;
+}
+
+@media (max-width: 1286px) {
+	.game-detail .mainInfo__info {
+		height: auto;
+		min-height: 0;
+		align-self: flex-end;
+	}
+}
+
+@media (max-width: 720px) {
+	.game-detail .mainInfo__interaction {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		gap: 8px;
+	}
+
+	.game-detail .mainInfo__interaction__left,
+	.game-detail .mainInfo__interaction__right {
+		width: auto;
+		flex-shrink: 0;
+	}
+
+	.game-detail .mainInfo__interaction__right {
+		width: auto;
+		justify-content: flex-end;
+		margin-left: auto;
+	}
+}
+
+@media (max-width: 576px) {
+	.game-detail .mainInfo__interaction {
+		min-height: 62px;
+		padding: 8px;
+	}
+
+	.game-detail .mainInfo__interaction__left,
+	.game-detail .mainInfo__interaction__right {
+		gap: 6px;
+	}
+
+	.game-detail .mainInfo__interaction__button {
+		flex-basis: 38px;
+		width: 38px;
+		height: 38px;
+		min-width: 38px;
+		min-height: 38px;
+	}
+
+	.game-detail .mainInfo__interaction__button_buy {
+		width: auto;
+		min-width: 80px;
+		padding: 0 10px;
+		font-size: 15px;
+	}
+
+	.game-detail .mainInfo__interaction__prices {
+		min-width: 62px;
+		font-size: 15px;
+	}
+
+	.game-detail .mainInfo__interaction__discount {
+		flex-basis: 48px;
+		width: 48px;
+		height: 38px;
+		min-width: 48px;
+		min-height: 38px;
+		font-size: 15px;
+	}
+
+	.game-detail #systemRequirements .bb_ul > li {
+		display: block;
+	}
+
+	.game-detail #systemRequirements .bb_ul > li > strong {
+		display: block;
+		max-width: none;
+		margin-bottom: 2px;
+	}
+}
+
+@media (max-width: 380px) {
+	.game-detail .mainInfo__interaction {
+		gap: 6px;
+	}
+
+	.game-detail .mainInfo__interaction__left,
+	.game-detail .mainInfo__interaction__right {
+		gap: 6px;
+	}
+
+	.game-detail .mainInfo__interaction__button {
+		flex-basis: 36px;
+		width: 36px;
+		height: 36px;
+		min-width: 36px;
+		min-height: 36px;
+	}
+
+	.game-detail .mainInfo__interaction__button_buy {
+		min-width: 72px;
+		padding: 0 10px;
+		font-size: 14px;
+	}
+
+	.game-detail .mainInfo__interaction__prices {
+		min-width: 62px;
+	}
+
+	.game-detail .mainInfo__interaction__prices__old {
+		font-size: 12px;
+		line-height: 14px;
+	}
+
+	.game-detail .mainInfo__interaction__prices__new {
+		font-size: 15px;
+		line-height: 20px;
+	}
+
+	.game-detail .mainInfo__interaction__discount {
+		flex-basis: 46px;
+		width: 46px;
+		height: 36px;
+		min-width: 46px;
+		min-height: 36px;
+		font-size: 15px;
+	}
+}

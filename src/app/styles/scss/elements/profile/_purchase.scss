@@ -1,0 +1,244 @@
+@use '../../default/base';
+
+$-clr-end: rgba(163, 215, 112, 1);
+$-clr-end_grad: rgba(163, 215, 112, .3);
+
+.purchase {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    &__header {
+        position: relative;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 25px;
+        overflow: hidden;
+        margin-bottom: 0px;
+        transition: .3s;
+        @include base.style-main_base;
+        &__bg {
+            position: absolute;
+            top: 0; bottom: 0; right: 0;
+            width: 400px;
+            z-index: 1;
+        }
+        &__left {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        &__right {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding-right: 40px;
+        }
+        &__info {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+            padding-left: 20px;
+            &__point {
+                &__title {
+                    color: rgb(180, 180, 180);
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+                &__value {
+                    display: flex;
+                    align-items: center;
+                    font-size: 18px;
+                    gap: 5px;
+                    & > a {
+                        display: flex;
+                        align-items: end;
+                        cursor: pointer;
+                        & > svg {
+                            transform: translateY(1px);
+                            height: 16px;
+                            & > path {
+                                transition: .15s;
+                            }
+                        }
+                        &:hover path{
+                            fill: #fff;
+                            stroke: #fff;
+                        }
+                    }
+                }
+                &_right {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: end;
+                }
+            }
+        }
+        &__button {
+            height: 100%;
+            width: 60px;
+            background-color: rgba(0, 0, 0, .1);
+            cursor: pointer;
+            transition: .2s;
+            & > svg {
+                height: 30px;
+                transform: rotate(90deg);
+                transition: .2s;
+            }
+        }
+    }
+    &__gamelist {
+        max-height: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        // overflow: hidden;
+        transition: .4s;
+        &__game {
+            height: 0px;
+            opacity: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px 0px 0px 10px;
+            overflow: hidden;
+            transition: all .4s, opacity .3s;
+            @include base.style-main_base;
+            &__bg {
+                position: absolute;
+                top: 0; bottom: 0; right: 0;
+                width: 400px;
+                z-index: 1;
+            }
+            &__left {
+                position: relative;
+                z-index: 2;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+            &__right {
+                position: relative;
+                z-index: 2;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                padding-right: 40px;
+            }
+            &__title {
+                width: 450px;
+                display: flex;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .1);
+                padding: {
+                    left: 20px;
+                    bottom: 20px;
+                    top: 20px;
+                    right: 20px;
+                };
+                &__img {
+                    height: 100%;
+                    margin-right: 20px;
+                    & > img {
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+                }
+                &__info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 3px;
+                    &__title {
+                        font-size: 20px;
+                    }
+                    &__price {
+                        &__new {
+                            font-weight: 600;
+                            font-size: 20px;
+                            color: base.$clr-blue_light;
+                            margin-right: 5px;
+                        }
+                        &__old {
+                            font-size: 16px;
+                            text-decoration: line-through;
+                            color: rgb(200, 200, 200);
+                        }
+                    }
+                }
+            }
+            &__info {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+                padding-left: 20px;
+                &__point {
+                    &__title {
+                        color: rgb(180, 180, 180);
+                        margin-bottom: 10px;
+                        font-size: 16px;
+                    }
+                    &__value {
+                        font-size: 18px;
+                    }
+                    &_right {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: end;
+                    }
+                }
+            }
+
+            &:last-child {
+                border-radius: 10px 0px 25px 25px;
+            }
+
+            &_end {
+                box-shadow: 2px 0 0 0 $-clr-end;
+            }
+            &_end &{
+                &__text {
+                    color: $-clr-end;
+                }
+                &__bg {
+                    background: linear-gradient(to left, $-clr-end_grad, transparent);
+                }
+            }
+        }
+    }
+    &_open &{
+        &__header {
+            border-radius: 25px 25px 0px 10px;
+            margin-bottom: 10px;
+            &__button {
+                & > svg {
+                    transform: rotate(270deg);
+                }
+            }
+        }
+        &__gamelist {
+            max-height: 700px;
+            &__game {
+                opacity: 1;
+                height: 110px;
+            }
+        }
+    }
+    &_end &__header{
+        box-shadow: 2px 0 0 0 $-clr-end;
+        &__text {
+            color: $-clr-end;
+        }
+        &__bg {
+            background: linear-gradient(to left, $-clr-end_grad, transparent);
+        }
+    }
+}

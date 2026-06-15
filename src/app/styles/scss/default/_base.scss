@@ -1,0 +1,258 @@
+// -------- Colors -------- 
+
+$clr-main_body: rgba(39, 39, 39, 1);
+
+// ~ Blue
+$clr-blue_light: rgba(1, 162, 255, 1);
+$clr-blue_light_transparent: rgba(1, 162, 255, .4);
+$clr-blue_light_hover: rgba(1, 162, 255, .25);
+$clr-blue_light_hover_border: rgba(1, 162, 255, .6);
+$clr-blue_dark: rgba(1, 74, 255, 1);
+
+// ~ Red
+$clr-red: rgb(204, 30, 30);
+$clr-red_light: rgb(255, 106, 106);
+$clr-red_close: rgb(170, 22, 22);
+
+// ~ Gray
+$clr-gray_dark: rgb(27, 27, 27);
+$clr-gray_37: rgb(33, 33, 33);
+$clr-gray_43: rgb(43, 43, 43);
+$clr-gray_47_hover: rgb(47, 47, 47);
+$clr-gray_55: rgb(55, 55, 55);
+$clr-gray_light: rgba(45, 45, 45, 1);
+
+// ~ Gradient
+$clr-grad_blue_0: linear-gradient(to bottom, rgba(1, 162, 255, 0), rgba(1, 74, 255, 0));
+$clr-grad_blue_100: linear-gradient(to top, rgba(1, 162, 255, .8), rgba(1, 162, 255, .2));
+$clr-grad_blue_100_2: linear-gradient(to top, rgba(1, 162, 255, 1), rgba(1, 162, 255, .5));
+$clr-grad_red: linear-gradient(to bottom, rgba(255, 73, 73, 1), rgba(167, 0, 0, 1));
+
+// ~ More
+$clr-steam_transparent: rgba(29, 117, 218, 0.8);
+$clr-metacritic_green: rgba(27, 214, 89, 0.8);
+
+// -------- Timing Function -------- 
+
+$tf-main: cubic-bezier(0, 0, 0, 0.75);
+
+// $lightGray: rgba(45, 45, 45, 1);
+
+// -------- Styles -------- 
+// ~ Glass
+
+$clr-blue_light_glassShadow: rgba(1, 162, 255, .7);
+// $shadow_out: 0 5px 10px -2px rgba(0, 0, 0, .2);
+$shadow_out: 0 5px 15px -2px rgba(0, 0, 0, .2);
+$shadow_border: inset 0 0 0 1px rgba(255, 255, 255, .2);
+$shadow_light: inset -1px 0 0 0 rgba(255, 255, 255, .25);
+
+@mixin style-glass {
+    box-shadow: inset 0 -20px 20px -20px  rgba(255, 255, 255, .4),
+    inset 0 30px 30px -30px  rgba(0, 0, 0, .1),
+    $shadow_out,  
+    // inset 0 0 0 1px rgba(40, 40, 40, .8), 
+    inset -1px 0 0 0 rgba(57, 68, 78, 0.5), 
+    inset 1px 0 0 0 rgba(57, 68, 78, 0.5), 
+    inset 0 1px 0 0 rgba(255, 255, 255, .5),
+    inset 0 -1px 0 0 rgba(255, 255, 255, .5);  
+    // border: 1px solid rgba(82, 98, 112, 0.5);
+    border: 1px solid rgba(40, 40, 40, .7);
+
+    // background-color: rgba(255, 255, 255, .1);
+}
+
+// ~ Main style
+
+@mixin style-main_transparent {
+    // background: linear-gradient(to top, rgba(255, 255, 255, .15), rgba(255, 255, 255, .05));
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
+}
+
+@mixin style-main {
+    // background-color: rgba(255, 255, 255, .1);
+    // border: 1px solid rgba(255, 255, 255, .15);
+    // box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
+
+    background-color: rgb(68, 68, 68);
+    border: 1px solid rgb(96, 96, 96);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
+}
+
+@mixin style-main_base_transparent {
+    background-color: rgba(50, 50, 50, 0.75);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+@mixin style-main_base {
+    background-color: rgb(47, 47, 47);
+    border: 1px solid rgb(78, 78, 78);
+    box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
+
+    // background-color: rgba(50, 50, 50, 0.75);
+    // border: 1px solid rgba(255, 255, 255, .15);
+    // box-shadow: 0 5px 15px -2px rgba(0, 0, 0, .2);
+}
+
+@mixin style-main_active {
+    background-color: $clr-blue_light_transparent;
+    border: 1px solid $clr-blue_light;
+}
+
+@mixin style-main_hover {
+    background-color: $clr-blue_light_hover;
+    border: 1px solid $clr-blue_light_hover_border;
+}
+
+@mixin style-main_click {
+    @include style-main;
+    transition: .2s;
+    cursor: pointer;
+    @media (hover: hover) {
+        &:hover {
+            @include style-main_hover;
+        }
+        &:active {
+            transform: scale(.95)
+        }
+    }
+}
+
+@mixin style-main_transparent_click {
+    @include style-main_transparent;
+    transition: .2s;
+    cursor: pointer;
+    @media (hover: hover) {
+        &:hover {
+            @include style-main_hover;
+        }
+        &:active {
+            transform: scale(.95)
+        }
+    }
+}
+
+@mixin style-main_mouse {
+    @include style-main_transparent;
+    transition: .2s;
+    @media (hover: hover) {
+        &:hover {
+            @include style-main_hover;
+        }
+    }
+}
+
+// ~ Primary button
+
+@mixin style-primaryBTN {
+    background-color: $clr-blue_light_transparent;
+    border: 1px solid $clr-blue_light;
+    font-weight: 700;
+    transition: .2s;
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+            @include style-main_hover;
+        }
+        &:active {
+            transform: scale(.95)
+        }
+    }
+}
+
+// ~ Percent block
+
+@mixin style-percentBlock {
+    background-color: $clr-blue_light_transparent;
+    border: 1px solid $clr-blue_light;
+    // box-shadow: inset 0 -5px 15px -5px $clr-blue_light;
+}
+
+// ~ information_game_style
+
+@mixin information_game_style {
+    border: 2px solid rgb(50, 50, 50);
+    padding: 10px 20px 20px 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px -5px rgba(0, 0, 0, 0.3);
+    background: rgb(45, 45, 45);
+}
+
+// ~ webkit_scrollbar
+
+@mixin style-webkit_scrollbar {
+    // scrollbar-width: thin; /* auto | thin | none */
+    // scrollbar-color: rgba(255, 255, 255, .15) rgba(0, 0, 0, .15);
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, .15); /* Цвет фона трека */
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, .15); /* Цвет ползунка */
+        border-radius: 10px;
+        @media (hover: hover) {
+            &:hover {
+                background: rgba(255, 255, 255, .2);
+            }
+        }
+    }
+}
+
+@mixin style-webkit_scrollbar_hidden {
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
+
+// -------- fonts -------- 
+
+$fnt-all: robotoFlex, sans-serif;
+
+// -------- mixins -------- 
+
+// $shadow_light_b: inset -1px 0 0 0px rgba(80, 176, 255, .25);
+// $shadow_border_b: inset 0 0 0 1px rgba(80, 176, 255, 0.2);
+
+@mixin absolute_zero {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+}
+
+@mixin pos_absolute($t, $r, $b, $l) {
+    position: absolute;
+    right: $r;
+    bottom: $b;
+    top: $t;
+    left: $l;
+}
+
+@mixin flex_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin grid($gap, $i) {
+    display: grid;
+    grid-gap: $gap;
+    grid-template-columns: repeat($i, minmax(0px, 1fr));
+}
+
+@mixin game_banner_size($w) {
+    width: $w;
+    height: calc($w / 0.82);
+}

@@ -1,0 +1,62 @@
+@use '../default/base';
+
+.switch {
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin-bottom: 20px;
+        gap: 10px;
+        &__point {
+            position: relative;
+            padding: 12px 16px 12px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            border-radius: 23px;
+            background-color: rgba(255, 255, 255, .05);
+            transition: .2s;
+            @include base.style-main_click;
+            &__click {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 2;
+            }
+            &__text {
+                position: relative;
+                z-index: 1;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            & > span {
+                position: relative;
+                z-index: 1;
+                font-size: 14px;
+                cursor: pointer;
+                transform: translateY(1px);
+            }
+            &_active {
+                @include base.style-main_active;
+                @media (hover: hover) {
+                    &:hover {
+                        @include base.style-main_active;
+                    }
+                }
+            }
+            @media (hover: hover) {
+                &:active {
+                    transform: scale(.95);
+                }
+            }
+        }
+    }
+    &__content {
+        animation: open_offers_games 0.5s ease 1;
+    }
+}

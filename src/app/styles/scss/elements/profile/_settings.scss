@@ -1,0 +1,178 @@
+@use '../../default/base';
+
+.settings {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    & > form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__left {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        flex-grow: 1;
+    }
+    &__right {
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        flex-shrink: 0;
+    }
+    &__conf {
+        width: 100%;
+        & > label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+            & > span {
+
+            }
+            & > div {
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                background-color: rgb(70, 70, 70);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgb(170, 170, 170);
+            }
+        }
+        & input {
+            display: block;
+            box-sizing: border-box;
+            height: 50px;
+            width: 100%;
+            border-radius: 15px;
+            @include base.style-main;
+            padding-left: 17px;
+            font-size: 16px;
+            outline: none;
+            cursor: text;
+            transition: 0.1s;
+            &:focus {
+                @include base.style-main_hover;
+            }
+        }
+        &__regionInput {
+            height: 50px;
+            position: relative;
+            & > input {
+                position: relative;
+                z-index: 1;
+            }
+            &__regions {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 3;
+                &__header {
+                    position: relative;
+                    z-index: 2;
+                    height: 50px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    transition: .2s;
+                    border-radius: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    padding-right: 12px;
+                    & > svg {
+                        height: 24px;
+                        transform: rotate(90deg);
+                        transition: .2s;
+                    }
+                    &:hover {
+                        background-color: rgba(255, 255, 255, .07);
+                    }
+                }
+                &__inner {
+                    display: none;
+                    position: relative;
+                    z-index: 1;
+                    width: 100%;
+                    border-radius: 0px 0px 15px 15px;
+                    @include base.style-main;
+                    background-color: #444;
+                    border-top: none;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    padding-right: 7px;
+                    padding-left: 7px;
+                    animation: open .25s base.$tf-main 1;
+                    &__search {
+                        & > input {
+                            height: 40px;
+                            font-size: 14px;
+                            border-radius: 10px;
+                            padding-left: 14px;
+                        }
+                        margin-bottom: 5px;
+                    }
+                    &__list {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        max-height: 210px;
+                        overflow: auto;
+                        &__region {
+                            padding-left: 10px;
+                            padding-top: 7px;
+                            padding-bottom: 7px;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: #555;
+                            }
+                        }
+                    }
+                }
+            }
+            &_open &{
+                &__regions {
+                    &__header {
+                        border-radius: 15px 15px 0px 0px;
+                        & > svg {
+                            transform: rotate(270deg);
+                        }
+                    }
+                    &__inner {
+                        display: block;
+                    }
+                }
+            }
+            &_open {
+                input[name="inp-region"] {
+                    border-radius: 15px 15px 0px 0px;
+                }
+            }
+        }
+    }
+    &__buttons {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+        &__button {
+            font-size: 16px;
+            height: 50px;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 15px;
+            &_save {
+                @include base.style-primaryBTN;
+            }
+            &_back {
+                @include base.style-main_click;
+            }
+        }
+    }
+}

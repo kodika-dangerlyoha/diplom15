@@ -1,0 +1,340 @@
+@use '../../default/base';
+
+.videoIF {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    animation: open .25s base.$tf-main 1;
+    &__button {
+        flex-shrink: 0;
+        height: 35px;
+        width: 35px;
+        padding: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+        border-radius: 50%;
+        transition: .15s;
+        cursor: pointer;
+        @include base.style-main_transparent_click;
+        & > svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__raceBlock {
+        // width: calc(100% - 245px);
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        height: 35px;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+    &__race {
+        position: relative;
+        width: 100%;
+        height: 12px;
+        border-radius: 6px;
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+        @include base.style-main_transparent;
+        overflow: hidden;
+        &__mouse {
+            opacity: 0;
+            position: absolute;
+            z-index: 2;
+            top: 0; 
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 6px;
+            transition: opacity .15s;
+        }
+        &__value {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            width: 0%;
+            border-radius: 6px;
+            @include base.style-main_active;
+            border: none;
+        }
+        &__time {
+            position: relative;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            &__point {
+                font-size: 12px;
+                &_hover {
+                    position: absolute;
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    left: 50%;
+                    -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+                    opacity: 0;
+                    transition: opacity .15s, transform .2s;
+                    transform: translateX(-50%);
+                    @include base.style-main_transparent;
+                    &_active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        &:hover &{
+            &__mouse {
+                opacity: 1;
+            }
+        }
+    }
+    &__volume {
+        height: 35px;
+        width: 100px;
+        position: relative;
+        
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        &__race {
+            height: 100%;
+            width: 100%;
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            @include base.style-main_transparent;
+            overflow: hidden;
+            padding-left: 7px;
+            padding-right: 10px;
+            border-radius: 17.5px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            &__mouse {
+                opacity: 0;
+                position: absolute;
+                z-index: 2;
+                top: 0; 
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                background-color: rgba(255, 255, 255, .3);
+                border-radius: 6px;
+                transition: opacity .15s;
+            }
+            &__value {
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                height: 100%;
+                width: 0%;
+                border-radius: 6px;
+                @include base.style-main_active;
+                border: none;
+            }
+            &__forMouse {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                z-index: 5;
+            }
+            &__num {
+                position: relative;
+                z-index: 4;
+                transform: translateY(-1px);
+                font-size: 12px;
+                -webkit-touch-callout: none; /* iOS Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none;
+            }
+            &:hover &__mouse{
+                opacity: 1;
+            }
+        }
+        // & ._volume_muted {
+        //     display: none;
+        // }
+        // & ._volume_on {
+        //     display: block;
+        // }
+        &__icon {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            & svg {
+                position: relative;
+                z-index: 4;
+                height: 20px;
+                animation: open .2s base.$tf-main 1;
+                & > g > g {
+                    fill: #fff;
+                    transition: .15s;
+                }
+                &._volume_muted {
+                    display: none;
+                }
+                &._volume_on {
+                    display: block;
+                }
+            }
+            &:hover svg {
+                & > g > g {
+                    fill: base.$clr-blue_light;
+                }
+            }
+        }
+        &_muted &__icon > svg{
+            &._volume_muted {
+                display: block;
+            }
+            &._volume_on {
+                display: none;
+            }
+        }
+    }
+    &__playButton {
+        padding: 10px;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+        & > svg {
+            animation: open .2s base.$tf-main 1;
+        }
+        & > ._pause {
+            display: none;
+        }
+        & > ._play {
+            display: block;
+        }
+        &_pause {
+            & > ._pause {
+                display: block;
+            }
+            & > ._play {
+                display: none;
+            }
+        }
+    }
+    &__buttonTglScrList {
+        padding: 4px;
+        & > svg {
+            transition: .2s;
+            transform: rotate(90deg);
+        }
+        &_closed {
+            & > svg {
+                transform: rotate(270deg);
+            }
+        }
+    }
+    &__buttonFullScreen {
+        &__entry {
+            display: block;
+        }
+        &__exit {
+            display: none;
+        }
+    }
+    &_hidden {
+        display: none;
+    }
+}
+
+.mainInfo__banner_fullscreen .videoIF {
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    &__button {
+        height: 45px;
+        width: 45px;
+        padding: 10px;
+    }
+    &__raceBlock {
+        // width: calc(100% - 500px);
+        // width: calc(1fr - 120px);
+        gap: 5px;
+        height: 45px;
+    }
+    &__race {
+        width: 100%;
+        height: 18px;
+        border-radius: 9px;
+        &__mouse {
+            border-radius: 9px;
+        }
+        &__value {
+            border-radius: 9px;
+        }
+        &__time {
+            &__point {
+                font-size: 14px;
+                &_hover {
+                    padding: 2px 5px;
+                    border-radius: 7px;
+                }
+            }
+        }
+    }
+    &__volume {
+        height: 45px;
+        width: 150px;
+        &__race {
+            height: 100%;
+            width: 100%;
+            padding-left: 10px;
+            border-radius: 22.5px;
+            &__mouse {
+                border-radius: 6px;
+            }
+            &__value {
+                border-radius: 6px;
+            }
+            &__forMouse {
+            }
+            &__num {
+                font-size: 14px;
+            }
+        }
+        &__icon {
+            width: 45px;
+            height: 45px;
+            margin-right: 5px;
+            & svg {
+                height: 24px;
+            }
+        }
+    }
+    &__playButton {
+        padding: 13px;
+    }
+    &__buttonTglScrList {
+        padding: 4px;
+    }
+    &__buttonFullScreen {
+        &__entry {
+            display: none;
+        }
+        &__exit {
+            display: block;
+        }
+    }
+}

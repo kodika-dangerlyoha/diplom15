@@ -1,0 +1,10 @@
+@use '../default/base';
+
+.griding {
+    &_3InRow {
+        @include base.grid(35px, 3);
+    }
+    &_4InRow {
+        @include base.grid(35px, 4);
+    }
+}
